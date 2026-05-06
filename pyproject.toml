@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "board-pack-investor-update-agent"
+version = "0.1.0"
+description = "Founder-office agent that turns startup metrics CSVs into board packs and investor updates."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Shubham Singh" }]
+license = { text = "MIT" }
+keywords = ["founders-office", "board-pack", "investor-update", "startup-metrics", "gemini", "groq"]
+dependencies = []
+
+[project.optional-dependencies]
+gemini = ["google-genai>=1.0.0"]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+board-pack-agent = "board_pack_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
