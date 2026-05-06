@@ -62,6 +62,13 @@ The default demo runs without an API key. If a founder wants richer wording, the
 
 ## Example Output
 
+Demo files are committed in [docs/demo_output](docs/demo_output):
+
+- [Board pack Markdown](docs/demo_output/board_pack.md)
+- [Investor update draft](docs/demo_output/investor_update.md)
+- [HTML board report](docs/demo_output/board_report.html)
+- [Structured analysis JSON](docs/demo_output/analysis.json)
+
 ```text
 Executive Summary
 

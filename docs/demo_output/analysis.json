@@ -1,0 +1,211 @@
+{
+  "company_context": "# Company Context\n\nThis is a fictional seed-stage AI SaaS company used for the demo.\n\nCompany:\nContextLayer AI\n\nWhat it sells:\nAn AI knowledge workflow for support and success teams.\n\nStage:\nSeed to Series A transition.\n\nCurrent operating question:\nCan the company keep growing MRR while improving activation and preserving enough runway to raise from a stronger position?\n\nAudience:\nFounders, board members, and current investors who need a concise monthly view of what changed, what is risky, and what decisions need to be made.\n\n",
+  "metrics": [
+    {
+      "month": "2026-01",
+      "mrr": 1200000.0,
+      "churn_rate": 4.8,
+      "cac": 18000.0,
+      "burn": 900000.0,
+      "runway_months": 12.5,
+      "activation_rate": 38.0,
+      "pipeline": 3200000.0,
+      "notes": "Founder-led sales, two enterprise pilots, activation still uneven."
+    },
+    {
+      "month": "2026-02",
+      "mrr": 1320000.0,
+      "churn_rate": 4.4,
+      "cac": 17600.0,
+      "burn": 940000.0,
+      "runway_months": 11.8,
+      "activation_rate": 41.0,
+      "pipeline": 3600000.0,
+      "notes": "Better onboarding from new success playbook. Pipeline improving."
+    },
+    {
+      "month": "2026-03",
+      "mrr": 1485000.0,
+      "churn_rate": 3.9,
+      "cac": 16800.0,
+      "burn": 990000.0,
+      "runway_months": 10.9,
+      "activation_rate": 45.0,
+      "pipeline": 4100000.0,
+      "notes": "New AI workflow positioning improved demo-to-trial quality."
+    },
+    {
+      "month": "2026-04",
+      "mrr": 1610000.0,
+      "churn_rate": 4.2,
+      "cac": 17200.0,
+      "burn": 1060000.0,
+      "runway_months": 9.8,
+      "activation_rate": 47.0,
+      "pipeline": 4700000.0,
+      "notes": "Higher infra spend after usage growth. Churn ticked up in SMB segment."
+    },
+    {
+      "month": "2026-05",
+      "mrr": 1780000.0,
+      "churn_rate": 3.6,
+      "cac": 16400.0,
+      "burn": 1080000.0,
+      "runway_months": 9.1,
+      "activation_rate": 51.0,
+      "pipeline": 5300000.0,
+      "notes": "Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
+    },
+    {
+      "month": "2026-06",
+      "mrr": 1965000.0,
+      "churn_rate": 3.2,
+      "cac": 15800.0,
+      "burn": 1120000.0,
+      "runway_months": 8.4,
+      "activation_rate": 54.0,
+      "pipeline": 6100000.0,
+      "notes": "Best month for expansion. Burn still rising but efficiency improved."
+    }
+  ],
+  "analysis": {
+    "latest_month": "2026-06",
+    "health_score": 81,
+    "latest_metrics": {
+      "month": "2026-06",
+      "mrr": 1965000.0,
+      "churn_rate": 3.2,
+      "cac": 15800.0,
+      "burn": 1120000.0,
+      "runway_months": 8.4,
+      "activation_rate": 54.0,
+      "pipeline": 6100000.0,
+      "notes": "Best month for expansion. Burn still rising but efficiency improved."
+    },
+    "computed_metrics": {
+      "mrr_growth_pct": 10.393258426966293,
+      "mrr_growth_abs": 185000.0,
+      "churn_delta": -0.3999999999999999,
+      "cac_delta_pct": -3.6585365853658534,
+      "burn_delta_pct": 3.7037037037037033,
+      "runway_delta": -0.6999999999999993,
+      "activation_delta": 3.0,
+      "pipeline_delta_pct": 15.09433962264151,
+      "avg_mrr_growth_pct": 10.373954611130966,
+      "avg_burn": 1086666.6666666667,
+      "burn_multiple": 6.054054054054054,
+      "pipeline_to_mrr": 3.104325699745547
+    },
+    "deterministic_highlights": [
+      "MRR reached $1.97M, up 10.4% month over month.",
+      "Pipeline reached $6.10M, up 15.1% month over month.",
+      "Activation improved by 3.0 points to 54.0%.",
+      "Churn improved by 0.4 points to 3.2%.",
+      "CAC decreased 3.7% to $16K."
+    ],
+    "deterministic_risks": [
+      "Runway is below 9 months at 8.4 months, which compresses fundraising options."
+    ],
+    "deterministic_decisions": [
+      "Decide whether to reduce discretionary burn or start fundraising prep earlier.",
+      "Decide whether activation improvement is the top product/GTM priority for the next month.",
+      "Decide which pipeline segments deserve founder time before adding more top-of-funnel volume.",
+      "Decide whether CAC improvement is strong enough to increase spend in the best-performing channel."
+    ],
+    "recent_rows": [
+      {
+        "month": "2026-01",
+        "mrr": 1200000.0,
+        "churn_rate": 4.8,
+        "cac": 18000.0,
+        "burn": 900000.0,
+        "runway_months": 12.5,
+        "activation_rate": 38.0,
+        "pipeline": 3200000.0,
+        "notes": "Founder-led sales, two enterprise pilots, activation still uneven."
+      },
+      {
+        "month": "2026-02",
+        "mrr": 1320000.0,
+        "churn_rate": 4.4,
+        "cac": 17600.0,
+        "burn": 940000.0,
+        "runway_months": 11.8,
+        "activation_rate": 41.0,
+        "pipeline": 3600000.0,
+        "notes": "Better onboarding from new success playbook. Pipeline improving."
+      },
+      {
+        "month": "2026-03",
+        "mrr": 1485000.0,
+        "churn_rate": 3.9,
+        "cac": 16800.0,
+        "burn": 990000.0,
+        "runway_months": 10.9,
+        "activation_rate": 45.0,
+        "pipeline": 4100000.0,
+        "notes": "New AI workflow positioning improved demo-to-trial quality."
+      },
+      {
+        "month": "2026-04",
+        "mrr": 1610000.0,
+        "churn_rate": 4.2,
+        "cac": 17200.0,
+        "burn": 1060000.0,
+        "runway_months": 9.8,
+        "activation_rate": 47.0,
+        "pipeline": 4700000.0,
+        "notes": "Higher infra spend after usage growth. Churn ticked up in SMB segment."
+      },
+      {
+        "month": "2026-05",
+        "mrr": 1780000.0,
+        "churn_rate": 3.6,
+        "cac": 16400.0,
+        "burn": 1080000.0,
+        "runway_months": 9.1,
+        "activation_rate": 51.0,
+        "pipeline": 5300000.0,
+        "notes": "Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
+      },
+      {
+        "month": "2026-06",
+        "mrr": 1965000.0,
+        "churn_rate": 3.2,
+        "cac": 15800.0,
+        "burn": 1120000.0,
+        "runway_months": 8.4,
+        "activation_rate": 54.0,
+        "pipeline": 6100000.0,
+        "notes": "Best month for expansion. Burn still rising but efficiency improved."
+      }
+    ]
+  },
+  "narrative": {
+    "executive_summary": "2026-06 was a stronger growth month, with MRR at $1.97M and month-over-month growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but runway is now 8.4 months, so the board discussion should stay focused on growth quality, burn discipline, and which pipeline segments deserve founder time.",
+    "what_changed": [
+      "MRR reached $1.97M, up 10.4% month over month.",
+      "Pipeline reached $6.10M, up 15.1% month over month.",
+      "Activation improved by 3.0 points to 54.0%.",
+      "Churn improved by 0.4 points to 3.2%.",
+      "CAC decreased 3.7% to $16K.",
+      "Health score is 81/100 based on growth, churn, activation, CAC, runway, and pipeline coverage."
+    ],
+    "risks": [
+      "Runway is below 9 months at 8.4 months, which compresses fundraising options."
+    ],
+    "decisions_needed": [
+      "Decide whether to reduce discretionary burn or start fundraising prep earlier.",
+      "Decide whether activation improvement is the top product/GTM priority for the next month.",
+      "Decide which pipeline segments deserve founder time before adding more top-of-funnel volume.",
+      "Decide whether CAC improvement is strong enough to increase spend in the best-performing channel."
+    ],
+    "board_questions": [
+      "Which customer segment is producing the highest-quality MRR growth?",
+      "Is activation improvement durable or driven by a one-time onboarding push?",
+      "What burn level gives us the best fundraising position three months from now?",
+      "Which pipeline deals need founder involvement this month?"
+    ],
+    "investor_update": "Hi everyone,\n\nQuick monthly update for 2026-06. MRR reached $1.97M, up 10.4% month over month. Activation improved to 54.0%, pipeline reached $6.10M, and CAC moved -3.7% versus last month.\n\nWhat improved:\n- MRR reached $1.97M, up 10.4% month over month.\n- Pipeline reached $6.10M, up 15.1% month over month.\n- Activation improved by 3.0 points to 54.0%.\n- Churn improved by 0.4 points to 3.2%.\n\nWhat we are watching:\n- Runway is below 9 months at 8.4 months, which compresses fundraising options.\n\nWhere help would be useful:\n- Warm intros to AI SaaS buyers who care about support, success, or internal knowledge workflows.\n- Feedback on whether we should prioritize enterprise expansion or faster mid-market acquisition this month.\n\nThanks,\n[Founder]"
+  }
+}
