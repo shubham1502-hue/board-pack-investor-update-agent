@@ -1,5 +1,21 @@
 # Board Pack / Investor Update Agent
 
+## Problem This Solves
+
+Founders often have the metrics but not the board narrative. The problem is turning MRR, churn, CAC, burn, runway, activation, and pipeline into a clear view of what changed, what is risky, and what decisions need to be made.
+
+## How It Helps
+
+- Converts a startup metrics CSV into a board pack, investor update draft, risk list, decision list, charts, HTML report, and JSON analysis.
+- Keeps deterministic metric analysis separate from optional LLM-generated narrative so the numbers stay inspectable.
+- Gives founders a forkable monthly operating workflow before they have a finance, RevOps, or FP&A function.
+
+## When To Fork This
+
+- Fork this if you prepare board packs, investor updates, monthly business reviews, or founder/CEO metric reviews.
+- Fork it when metrics exist in a spreadsheet but the narrative still takes hours to assemble.
+- Replace the sample metrics, company context, risk rules, and output format with your own board cadence.
+
 I built this because board prep is one of the clearest places where a Founder's Office operator can create leverage.
 
 Most founders already have the numbers somewhere: MRR, churn, CAC, burn, runway, activation, pipeline. The hard part is turning those numbers into a clear operating narrative:
