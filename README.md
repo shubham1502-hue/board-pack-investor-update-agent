@@ -28,6 +28,21 @@ Most founders already have the numbers somewhere: MRR, churn, CAC, burn, runway,
 
 This repo turns a startup metrics CSV into a board-ready pack, charts, risks, decisions, and an investor update draft.
 
+## Use This In Your Company
+
+- Use it as a monthly board-prep workflow before you hire finance, RevOps, or FP&A support.
+- Keep the output set: board pack, investor update, risks, decisions, charts, HTML report, and JSON analysis.
+- Replace the sample metrics CSV and company context with your own operating metrics.
+
+## Minimum Edits To Make It Yours
+
+- examples/startup_metrics.csv
+- examples/company_context.md
+- risk thresholds if your board cadence differs
+- output wording after generation
+
+The fastest path is: fork the repo, replace the inputs above, run the demo or open the template, then adjust only the parts that reflect your company's workflow.
+
 ## Why I Built This
 
 I am building projects that show how I think as a Founder's Office candidate.
@@ -225,5 +240,3 @@ I have built RevOps infrastructure from scratch at a founder-led startup and I a
 
 - LinkedIn: <https://linkedin.com/in/shubham9616>
 - GitHub: <https://github.com/shubham1502-hue>
-
-If you are a founder reading this, the repo is open for you to use. If you want this adapted to your own metrics, investor update cadence, board format, or operating rhythm, that is exactly the kind of work I want to do.
