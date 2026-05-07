@@ -30,6 +30,8 @@ This repo turns a startup metrics CSV into a board-ready pack, charts, risks, de
 
 ## Use This In Your Company
 
+This repo is designed to be forked into an internal company workflow. Fork it, replace the sample inputs with your company context, and keep only the parts that match your operating cadence. No permission request or sales call is needed before using it; the repo is the handoff. Check the license if you plan to redistribute your version.
+
 - Use it as a monthly board-prep workflow before you hire finance, RevOps, or FP&A support.
 - Keep the output set: board pack, investor update, risks, decisions, charts, HTML report, and JSON analysis.
 - Replace the sample metrics CSV and company context with your own operating metrics.
