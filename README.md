@@ -1,5 +1,152 @@
 # Board Pack / Investor Update Agent
 
+Turn startup metrics into a board pack, investor update, risk list, decision list, and charts.
+
+<!-- FOUNDER_OS_STANDARD_README -->
+
+## The founder problem
+
+Founders often have the numbers but not the board narrative. The operating pain is converting MRR, churn, CAC, burn, runway, activation, and pipeline into a clear story about what changed and what decisions are needed.
+
+## What this repo does
+
+- analyzes startup metrics
+- generates board pack and investor update drafts
+- creates charts and HTML report
+- keeps deterministic metric analysis separate from optional LLM narrative
+
+## What a founder gets in 10 minutes
+
+- board pack
+- investor update draft
+- risk list
+- decision list
+- metric charts
+- HTML report
+- JSON analysis
+
+## Before and after
+
+Before:
+
+- monthly reporting assembled manually
+- numbers without narrative
+- unclear board asks
+- metrics copied across tools
+
+After:
+
+- board-ready packet
+- investor-safe update draft
+- clear risks and decisions
+- repeatable reporting workflow
+
+## Who this is for
+
+- early-stage founders
+- Founder's Office teams
+- board and investor reporting owners
+- startup metrics operators
+- BizOps operators
+
+## Quick start
+
+- Run `python -m pip install -e .`.
+- Run `python -m board_pack_agent run --metrics examples/startup_metrics.csv --context examples/company_context.md --out docs/demo_output`.
+- Open `docs/demo_output/board_pack.md` first.
+- Review `docs/demo_output/investor_update.md` before sending anything.
+
+## How to fork and use this for your company
+
+1. Click Fork.
+2. Rename the repo if needed.
+3. Replace `examples/startup_metrics.csv` with your company metrics.
+4. Edit `examples/company_context.md` with your stage, strategy, and constraints.
+5. Keep optional LLM keys in `.env`, never in committed files.
+6. Move final outputs into Google Docs, Notion, Slides, or your board reporting folder.
+
+### Non-technical path
+
+- Replace one CSV: `examples/startup_metrics.csv`.
+- Edit one context file: `examples/company_context.md`.
+- Run one command.
+- Read one output first: `docs/demo_output/board_pack.md`.
+
+## Input format
+
+- metrics CSV with month, MRR, churn, CAC, burn, runway, activation, pipeline, and notes where available
+- company context file
+- optional LLM provider settings in `.env`
+
+The default sample data and examples are synthetic, anonymized, or template-only unless the repo explicitly documents a public source. Keep private customer, prospect, employee, investor, borrower, merchant, payment, or company data out of public forks.
+
+## Output files
+
+- `docs/demo_output/board_pack.md`: board-ready packet
+- `docs/demo_output/investor_update.md`: investor update draft
+- `docs/demo_output/analysis.json`: structured analysis
+- `docs/demo_output/board_report.html`: HTML report
+- `docs/demo_output/charts/`: metric charts
+
+## Example founder workflow
+
+- Week 1: update metrics and context.
+- Week 2: run board pack draft.
+- Week 3: review risks and decisions with leadership.
+- Week 4: finalize investor update and board narrative.
+
+## Customization guide
+
+Customize these before using the repo for a real company:
+
+- metric definitions
+- risk thresholds
+- board narrative sections
+- chart selection
+- optional provider prompts
+
+## Where this fits in the Founder OS
+
+Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics and `founder-os-revenue-engine` for GTM diagnosis that should inform the board story.
+
+## Why this matters
+
+This is not an investor update template. It is a reporting workflow that connects metrics to board-level decisions.
+
+## Roadmap
+
+- Google Sheets import
+- Slides export
+- Notion export
+- investor update email draft
+- weekly review integration
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) if present. Practical improvements are welcome when they make the workflow easier to fork, run, or adapt.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+## Built by
+
+Built by Shubham Singh, a founder-facing operator focused on RevOps, GTM systems, startup metrics, AI workflows, and operating systems for early-stage teams.
+
+## Use this in your company
+
+Fork it, replace the sample inputs with your company context, and run the workflow. Start with the main output listed in the Quick Start section. Keep private data out of public forks.
+
+## If you are a Founder's Office candidate
+
+Use this repo to understand how a founder-facing operator turns messy inputs into decisions, cadence, and execution artifacts. Fork it, adapt it to a real company example, and write a short case note explaining what changed.
+
+---
+
+## Detailed implementation notes
+
+The founder-facing guide above is the fastest path. The original repo-specific notes are preserved below for deeper implementation context.
+
 ## Problem This Solves
 
 Founders often have the metrics but not the board narrative. The problem is turning MRR, churn, CAC, burn, runway, activation, and pipeline into a clear view of what changed, what is risky, and what decisions need to be made.
@@ -109,13 +256,13 @@ Decisions Needed
 
 ```mermaid
 flowchart LR
-    CSV["Metrics CSV"] --> Analyze["Metric analysis"]
-    Analyze --> Risks["Risks + decisions"]
-    Analyze --> Charts["SVG charts"]
-    Context["Company context"] --> Prompt["Board narrative prompt"]
-    Risks --> Prompt
-    Prompt --> LLM["Mock / Gemini / Groq"]
-    LLM --> Outputs["Board pack + investor update + HTML report + JSON"]
+  CSV["Metrics CSV"] --> Analyze["Metric analysis"]
+  Analyze --> Risks["Risks + decisions"]
+  Analyze --> Charts["SVG charts"]
+  Context["Company context"] --> Prompt["Board narrative prompt"]
+  Risks --> Prompt
+  Prompt --> LLM["Mock / Gemini / Groq"]
+  LLM --> Outputs["Board pack + investor update + HTML report + JSON"]
 ```
 
 The system does three jobs:
@@ -157,10 +304,10 @@ Run the demo:
 python -m pip install -e .
 
 python -m board_pack_agent run \
-  --metrics examples/startup_metrics.csv \
-  --context examples/company_context.md \
-  --provider mock \
-  --out outputs/demo
+ --metrics examples/startup_metrics.csv \
+ --context examples/company_context.md \
+ --provider mock \
+ --out outputs/demo
 ```
 
 Then open:
@@ -180,10 +327,10 @@ cp .env.example .env
 # Add GEMINI_API_KEY to .env
 
 python -m board_pack_agent run \
-  --metrics examples/startup_metrics.csv \
-  --context examples/company_context.md \
-  --provider gemini \
-  --out outputs/gemini-run
+ --metrics examples/startup_metrics.csv \
+ --context examples/company_context.md \
+ --provider gemini \
+ --out outputs/gemini-run
 ```
 
 ## Using Groq
@@ -195,10 +342,10 @@ cp .env.example .env
 # Add GROQ_API_KEY to .env
 
 python -m board_pack_agent run \
-  --metrics examples/startup_metrics.csv \
-  --context examples/company_context.md \
-  --provider groq \
-  --out outputs/groq-run
+ --metrics examples/startup_metrics.csv \
+ --context examples/company_context.md \
+ --provider groq \
+ --out outputs/groq-run
 ```
 
 ## Input Format
