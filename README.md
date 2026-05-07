@@ -38,12 +38,16 @@ This repo is designed to be forked into an internal company workflow. Fork it, r
 
 ## Minimum Edits To Make It Yours
 
-- examples/startup_metrics.csv
-- examples/company_context.md
-- risk thresholds if your board cadence differs
-- output wording after generation
+Change these first:
 
-The fastest path is: fork the repo, replace the inputs above, run the demo or open the template, then adjust only the parts that reflect your company's workflow.
+| Edit | Where | Why |
+|---|---|---|
+| Replace the monthly KPI file. | `examples/startup_metrics.csv` | This drives the board pack, investor update, risks, decisions, and charts. |
+| Rewrite the company context. | `examples/company_context.md` | Helps the narrative reflect your business model, stage, and board cadence. |
+| Adjust risk thresholds. | `src/board_pack_agent/metrics.py` | Makes runway, churn, activation, pipeline, and growth warnings fit your company. |
+| Review final investor wording. | generated `investor_update.md` | Keeps the output accurate before anything is shared externally. |
+
+You can leave chart generation, HTML reporting, JSON output, and the mock provider alone on the first fork. Run the sample once, replace the two example inputs, then tune thresholds after one real board cycle.
 
 ## Why I Built This
 
