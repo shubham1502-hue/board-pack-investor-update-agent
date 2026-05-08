@@ -4,6 +4,36 @@ Turn startup metrics into a board pack, investor update, risk list, decision lis
 
 <!-- FOUNDER_OS_STANDARD_README -->
 
+## Output preview
+
+The included demo output shows:
+
+- `docs/demo_output/board_pack.md`: board-ready operating packet
+- `docs/demo_output/investor_update.md`: investor update draft for founder review
+- `docs/demo_output/analysis.json`: structured metric analysis
+- `docs/demo_output/board_report.html`: HTML report
+
+## 7-day Founder's Office sprint
+
+- Day 1: Clean startup metrics and confirm definitions
+- Day 2: Update company context and current operating constraints
+- Day 3: Run the deterministic board pack workflow
+- Day 4: Review risks, decisions, and narrative gaps with the founder
+- Day 5: Tighten investor-safe language and remove unsupported claims
+- Day 6: Align charts, asks, and board discussion points
+- Day 7: Finalize the board or investor update packet
+
+## Founder's Office signal
+
+This repo demonstrates:
+
+- metric interpretation for leadership communication
+- separating analysis from narrative
+- investor-safe writing discipline
+- risk and decision framing
+- board packet structure
+- founder review before external sharing
+
 ## The founder problem
 
 Founders often have the numbers but not the board narrative. The operating pain is converting MRR, churn, CAC, burn, runway, activation, and pipeline into a clear story about what changed and what decisions are needed.
