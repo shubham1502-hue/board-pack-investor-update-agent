@@ -117,6 +117,7 @@ Use this repo with the Founder OS ecosystem if you want to connect it to adjacen
 - Pull GTM risk from [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine).
 - Pull onboarding or activation risk from [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os).
 - Pull retention risk, expansion readiness, churn drivers, and customer proof opportunities from [founder-retention-expansion-os](https://github.com/shubham1502-hue/founder-retention-expansion-os).
+- Pull hiring plan, leadership gap, offer risk, and team-capacity signal from [founder-hiring-talent-pipeline-os](https://github.com/shubham1502-hue/founder-hiring-talent-pipeline-os).
 - Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) when metric definitions need tightening.
 
 ## Lifecycle handoff
@@ -127,6 +128,7 @@ Before:
 - [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine) for GTM risk.
 - [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os) for activation risk.
 - [founder-retention-expansion-os](https://github.com/shubham1502-hue/founder-retention-expansion-os) for retention, expansion, churn, and customer proof signal.
+- [founder-hiring-talent-pipeline-os](https://github.com/shubham1502-hue/founder-hiring-talent-pipeline-os) for role priorities, hiring risks, leadership gaps, offer risks, and team-capacity signal.
 - [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) for metric definitions.
 
 This repo produces:
@@ -155,9 +157,13 @@ After:
 
 [Founder Product Feedback Roadmap OS](https://github.com/shubham1502-hue/founder-product-feedback-roadmap-os) can supply product gaps, roadmap decisions, customer signal strength, revenue-blocking themes, retention-risk product gaps, and expansion unlocks for board or investor narrative.
 
+## Hiring and org narrative
+
+[Founder Hiring Talent Pipeline OS](https://github.com/shubham1502-hue/founder-hiring-talent-pipeline-os) can supply role priorities, hiring risks, leadership gaps, offer risks, and team-capacity signals that can be translated into board or investor narrative when org capacity matters.
+
 ## Where this fits in the Founder OS
 
-Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics, `founder-os-revenue-engine` for GTM diagnosis, `founder-retention-expansion-os` when customer health, renewal, expansion, or proof should inform the board story, and `founder-product-feedback-roadmap-os` when roadmap, retention, or product risk matters.
+Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics, `founder-os-revenue-engine` for GTM diagnosis, `founder-retention-expansion-os` when customer health, renewal, expansion, or proof should inform the board story, `founder-product-feedback-roadmap-os` when roadmap, retention, or product risk matters, and `founder-hiring-talent-pipeline-os` when hiring plan, leadership gaps, or org capacity matter.
 
 ## Why this matters
 
