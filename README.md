@@ -105,6 +105,10 @@ Customize these before using the repo for a real company:
 - chart selection
 - optional provider prompts
 
+## Onboarding and activation narrative
+
+[Founder Customer Onboarding OS](https://github.com/shubham1502-hue/founder-customer-onboarding-os) can supply onboarding health, activation risk, high-value customer risk, and process bottlenecks that can be translated into board or investor narrative when retention, activation, or post-sale execution matters.
+
 ## Where this fits in the Founder OS
 
 Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics and `founder-os-revenue-engine` for GTM diagnosis that should inform the board story.
