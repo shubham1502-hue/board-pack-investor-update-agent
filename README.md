@@ -105,6 +105,42 @@ Customize these before using the repo for a real company:
 - chart selection
 - optional provider prompts
 
+## Standalone or integrated
+
+Standalone:
+Use this repo by itself if you only need to turn startup metrics and company context into board or investor narrative. Fork it, replace the sample input, run the workflow or copy the templates, and use the main output in your next founder review.
+
+Integrated:
+Use this repo with the Founder OS ecosystem if you want to connect it to adjacent operating workflows.
+
+- Use after [founder-weekly-operating-review-agent](https://github.com/shubham1502-hue/founder-weekly-operating-review-agent) creates weekly signal.
+- Pull GTM risk from [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine).
+- Pull onboarding or activation risk from [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os).
+- Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) when metric definitions need tightening.
+
+## Lifecycle handoff
+
+Before:
+
+- [founder-weekly-operating-review-agent](https://github.com/shubham1502-hue/founder-weekly-operating-review-agent) for weekly operating signal.
+- [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine) for GTM risk.
+- [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os) for activation risk.
+- [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) for metric definitions.
+
+This repo produces:
+
+- Board pack
+- Investor update
+- Risk list
+- Decision list
+- Narrative draft
+
+After:
+
+- Board meeting prep
+- Investor update review
+- Founder decisions and follow-up actions
+
 ## Onboarding and activation narrative
 
 [Founder Customer Onboarding OS](https://github.com/shubham1502-hue/founder-customer-onboarding-os) can supply onboarding health, activation risk, high-value customer risk, and process bottlenecks that can be translated into board or investor narrative when retention, activation, or post-sale execution matters.
