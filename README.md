@@ -151,9 +151,13 @@ After:
 
 [Founder Retention Expansion OS](https://github.com/shubham1502-hue/founder-retention-expansion-os) can supply retention risk, expansion readiness, churn drivers, and customer proof opportunities that can be translated into board or investor narrative when customer health, NRR, GRR, churn, expansion, or referenceability matters.
 
+## Product and roadmap narrative
+
+[Founder Product Feedback Roadmap OS](https://github.com/shubham1502-hue/founder-product-feedback-roadmap-os) can supply product gaps, roadmap decisions, customer signal strength, revenue-blocking themes, retention-risk product gaps, and expansion unlocks for board or investor narrative.
+
 ## Where this fits in the Founder OS
 
-Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics, `founder-os-revenue-engine` for GTM diagnosis, and `founder-retention-expansion-os` when customer health, renewal, expansion, or proof should inform the board story.
+Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics, `founder-os-revenue-engine` for GTM diagnosis, `founder-retention-expansion-os` when customer health, renewal, expansion, or proof should inform the board story, and `founder-product-feedback-roadmap-os` when roadmap, retention, or product risk matters.
 
 ## Why this matters
 
