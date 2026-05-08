@@ -116,6 +116,7 @@ Use this repo with the Founder OS ecosystem if you want to connect it to adjacen
 - Use after [founder-weekly-operating-review-agent](https://github.com/shubham1502-hue/founder-weekly-operating-review-agent) creates weekly signal.
 - Pull GTM risk from [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine).
 - Pull onboarding or activation risk from [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os).
+- Pull retention risk, expansion readiness, churn drivers, and customer proof opportunities from [founder-retention-expansion-os](https://github.com/shubham1502-hue/founder-retention-expansion-os).
 - Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) when metric definitions need tightening.
 
 ## Lifecycle handoff
@@ -125,6 +126,7 @@ Before:
 - [founder-weekly-operating-review-agent](https://github.com/shubham1502-hue/founder-weekly-operating-review-agent) for weekly operating signal.
 - [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine) for GTM risk.
 - [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os) for activation risk.
+- [founder-retention-expansion-os](https://github.com/shubham1502-hue/founder-retention-expansion-os) for retention, expansion, churn, and customer proof signal.
 - [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) for metric definitions.
 
 This repo produces:
@@ -145,9 +147,13 @@ After:
 
 [Founder Customer Onboarding OS](https://github.com/shubham1502-hue/founder-customer-onboarding-os) can supply onboarding health, activation risk, high-value customer risk, and process bottlenecks that can be translated into board or investor narrative when retention, activation, or post-sale execution matters.
 
+## Retention and expansion narrative
+
+[Founder Retention Expansion OS](https://github.com/shubham1502-hue/founder-retention-expansion-os) can supply retention risk, expansion readiness, churn drivers, and customer proof opportunities that can be translated into board or investor narrative when customer health, NRR, GRR, churn, expansion, or referenceability matters.
+
 ## Where this fits in the Founder OS
 
-Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics and `founder-os-revenue-engine` for GTM diagnosis that should inform the board story.
+Use this after `founder-weekly-operating-review-agent` creates weekly signal. Use `startup-metrics-playbook` to define metrics, `founder-os-revenue-engine` for GTM diagnosis, and `founder-retention-expansion-os` when customer health, renewal, expansion, or proof should inform the board story.
 
 ## Why this matters
 
