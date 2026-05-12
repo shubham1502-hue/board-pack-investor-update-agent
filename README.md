@@ -83,6 +83,7 @@ After:
 
 - Run `python -m pip install -e .`.
 - Run `python -m board_pack_agent run --metrics examples/startup_metrics.csv --context examples/company_context.md --out docs/demo_output`.
+- Optionally add `--risk-config configs/seed-stage-risk-rules.json` to customize the risk thresholds.
 - Open `docs/demo_output/board_pack.md` first.
 - Review `docs/demo_output/investor_update.md` before sending anything.
 
@@ -106,6 +107,7 @@ After:
 
 - metrics CSV with month, MRR, churn, CAC, burn, runway, activation, pipeline, and notes where available
 - company context file
+- optional JSON risk rule config
 - optional LLM provider settings in `.env`
 
 The default sample data and examples are synthetic, anonymized, or template-only unless the repo explicitly documents a public source. Keep private customer, prospect, employee, investor, borrower, merchant, payment, or company data out of public forks.
@@ -277,10 +279,22 @@ Change these first:
 |---|---|---|
 | Replace the monthly KPI file. | `examples/startup_metrics.csv` | This drives the board pack, investor update, risks, decisions, and charts. |
 | Rewrite the company context. | `examples/company_context.md` | Helps the narrative reflect your business model, stage, and board cadence. |
-| Adjust risk thresholds. | `src/board_pack_agent/metrics.py` | Makes runway, churn, activation, pipeline, and growth warnings fit your company. |
+| Adjust risk thresholds. | `configs/seed-stage-risk-rules.json` or your own JSON file | Makes runway, churn, activation, pipeline, and growth warnings fit your company. |
 | Review final investor wording. | generated `investor_update.md` | Keeps the output accurate before anything is shared externally. |
 
 You can leave chart generation, HTML reporting, JSON output, and the mock provider alone on the first fork. Run the sample once, replace the two example inputs, then tune thresholds after one real board cycle.
+
+## Risk Rule Config
+
+Defaults work without any config file. To tune risk judgment for your stage, copy `configs/seed-stage-risk-rules.json`, change the thresholds, and pass it with `--risk-config`.
+
+Tune these first:
+
+- `low_runway_months`: when runway becomes a board-level risk.
+- `healthy_runway_months`: when burn discipline should stay visible.
+- `elevated_churn_rate`: when churn should appear in the risk list.
+- `low_activation_rate`: when activation becomes a revenue leak risk.
+- `low_pipeline_to_mrr`: when pipeline coverage is too thin.
 
 ## Why I Built This
 
@@ -392,6 +406,7 @@ python -m pip install -e .
 python -m board_pack_agent run \
  --metrics examples/startup_metrics.csv \
  --context examples/company_context.md \
+ --risk-config configs/seed-stage-risk-rules.json \
  --provider mock \
  --out outputs/demo
 ```

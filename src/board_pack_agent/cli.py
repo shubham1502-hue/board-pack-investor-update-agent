@@ -31,6 +31,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--context", type=Path, help="Company context Markdown file.")
     parser.add_argument("--out", type=Path, help="Output directory. Defaults to outputs/<timestamp>.")
     parser.add_argument("--provider", default="mock", choices=["mock", "gemini", "groq"], help="Narrative provider.")
+    parser.add_argument("--risk-config", type=Path, help="Optional JSON file with founder-customized risk thresholds.")
     parser.add_argument("--env-file", type=Path, default=Path(".env"), help="Optional env file path.")
     return parser
 
@@ -45,7 +46,7 @@ def main(argv: list[str] | None = None) -> int:
     out_dir = args.out or Path("outputs") / utc_run_id()
     try:
         provider = get_provider(args.provider)
-        rows, snapshot, narrative, context = run_analysis(args.metrics, args.context, provider)
+        rows, snapshot, narrative, context = run_analysis(args.metrics, args.context, provider, args.risk_config)
         write_outputs(rows, snapshot, narrative, context, out_dir)
     except (OSError, ValueError, LLMError) as exc:
         print(f"Error: {exc}")

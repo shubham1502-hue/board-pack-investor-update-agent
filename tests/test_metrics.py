@@ -6,7 +6,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from board_pack_agent.metrics import analyze_metrics, load_metrics
+from board_pack_agent.metrics import analyze_metrics, load_metrics, load_risk_rules
+from board_pack_agent.models import MetricRow
 
 
 class MetricsTests(unittest.TestCase):
@@ -32,6 +33,42 @@ class MetricsTests(unittest.TestCase):
 
             with self.assertRaises(ValueError):
                 load_metrics(path)
+
+    def test_custom_risk_rule_changes_runway_warning(self) -> None:
+        rows = [
+            MetricRow(
+                month="2026-05",
+                mrr=100000,
+                churn_rate=2.5,
+                cac=100,
+                burn=50000,
+                runway_months=16,
+                activation_rate=60,
+                pipeline=400000,
+            ),
+            MetricRow(
+                month="2026-06",
+                mrr=110000,
+                churn_rate=2.5,
+                cac=95,
+                burn=51000,
+                runway_months=14,
+                activation_rate=60,
+                pipeline=400000,
+            ),
+        ]
+
+        default_snapshot = analyze_metrics(rows)
+        custom_snapshot = analyze_metrics(rows, {"low_runway_months": 15})
+
+        self.assertFalse(any("below 15 months" in risk for risk in default_snapshot.risks))
+        self.assertTrue(any("below 15 months" in risk for risk in custom_snapshot.risks))
+
+    def test_load_risk_rules_merges_seed_stage_config(self) -> None:
+        rules = load_risk_rules(ROOT / "configs" / "seed-stage-risk-rules.json")
+
+        self.assertEqual(rules["low_runway_months"], 9)
+        self.assertEqual(rules["activation_decision_rate"], 55)
 
 
 if __name__ == "__main__":

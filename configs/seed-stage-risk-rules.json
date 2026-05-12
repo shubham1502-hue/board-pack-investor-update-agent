@@ -1,0 +1,21 @@
+{
+  "strong_mrr_growth_pct": 10,
+  "moderate_mrr_growth_pct": 5,
+  "healthy_churn_rate": 3.5,
+  "elevated_churn_rate": 4,
+  "high_churn_rate": 5,
+  "healthy_activation_rate": 50,
+  "low_activation_rate": 50,
+  "very_low_activation_rate": 40,
+  "cac_improvement_pct": -5,
+  "cac_worse_pct": 5,
+  "healthy_runway_months": 12,
+  "low_runway_months": 9,
+  "fundraising_runway_months": 10,
+  "healthy_pipeline_to_mrr": 3,
+  "low_pipeline_to_mrr": 2,
+  "healthy_burn_multiple": 6,
+  "high_burn_multiple": 10,
+  "burn_increase_pct": 5,
+  "activation_decision_rate": 55
+}

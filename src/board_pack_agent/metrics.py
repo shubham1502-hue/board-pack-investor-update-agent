@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 from .models import MetricRow, MetricSnapshot
@@ -18,6 +19,28 @@ REQUIRED_COLUMNS = {
     "pipeline",
 }
 
+DEFAULT_RISK_RULES = {
+    "strong_mrr_growth_pct": 10.0,
+    "moderate_mrr_growth_pct": 5.0,
+    "healthy_churn_rate": 3.5,
+    "elevated_churn_rate": 4.0,
+    "high_churn_rate": 5.0,
+    "healthy_activation_rate": 50.0,
+    "low_activation_rate": 50.0,
+    "very_low_activation_rate": 40.0,
+    "cac_improvement_pct": -5.0,
+    "cac_worse_pct": 5.0,
+    "healthy_runway_months": 12.0,
+    "low_runway_months": 9.0,
+    "fundraising_runway_months": 10.0,
+    "healthy_pipeline_to_mrr": 3.0,
+    "low_pipeline_to_mrr": 2.0,
+    "healthy_burn_multiple": 6.0,
+    "high_burn_multiple": 10.0,
+    "burn_increase_pct": 5.0,
+    "activation_decision_rate": 55.0,
+}
+
 
 def load_metrics(path: Path) -> list[MetricRow]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -30,6 +53,26 @@ def load_metrics(path: Path) -> list[MetricRow]:
     if len(rows) < 2:
         raise ValueError("Metrics CSV needs at least two months to generate trend commentary.")
     return rows
+
+
+def load_risk_rules(path: Path | None = None) -> dict[str, float]:
+    rules = DEFAULT_RISK_RULES.copy()
+    if not path:
+        return rules
+
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError(f"Risk config must be a JSON object: {path}")
+
+    unknown_keys = sorted(set(raw) - set(DEFAULT_RISK_RULES))
+    if unknown_keys:
+        raise ValueError(f"Unknown risk config keys in {path}: {', '.join(unknown_keys)}")
+
+    for key, value in raw.items():
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"Risk config value for {key} must be a number.")
+        rules[key] = float(value)
+    return rules
 
 
 def _row_from_csv(row: dict[str, str]) -> MetricRow:
@@ -55,7 +98,11 @@ def _float(value: str | None) -> float:
     return float(cleaned)
 
 
-def analyze_metrics(rows: list[MetricRow]) -> MetricSnapshot:
+def analyze_metrics(rows: list[MetricRow], risk_rules: dict[str, float] | None = None) -> MetricSnapshot:
+    rules = DEFAULT_RISK_RULES.copy()
+    if risk_rules:
+        rules.update(risk_rules)
+
     latest = rows[-1]
     previous = rows[-2] if len(rows) >= 2 else None
     mrr_growth_abs = latest.mrr - previous.mrr if previous else 0.0
@@ -83,6 +130,7 @@ def analyze_metrics(rows: list[MetricRow]) -> MetricSnapshot:
         activation_rate=latest.activation_rate,
         pipeline_to_mrr=pipeline_to_mrr,
         burn_multiple=burn_multiple,
+        risk_rules=rules,
     )
 
     snapshot = MetricSnapshot(
@@ -103,8 +151,8 @@ def analyze_metrics(rows: list[MetricRow]) -> MetricSnapshot:
         health_score=health_score,
     )
     snapshot.highlights = _build_highlights(snapshot)
-    snapshot.risks = _build_risks(snapshot)
-    snapshot.decisions = _build_decisions(snapshot)
+    snapshot.risks = _build_risks(snapshot, rules)
+    snapshot.decisions = _build_decisions(snapshot, rules)
     return snapshot
 
 
@@ -122,44 +170,45 @@ def _score_health(
     activation_rate: float,
     pipeline_to_mrr: float,
     burn_multiple: float | None,
+    risk_rules: dict[str, float],
 ) -> int:
     score = 50
-    if mrr_growth_pct >= 10:
+    if mrr_growth_pct >= risk_rules["strong_mrr_growth_pct"]:
         score += 15
-    elif mrr_growth_pct >= 5:
+    elif mrr_growth_pct >= risk_rules["moderate_mrr_growth_pct"]:
         score += 8
     else:
         score -= 8
 
-    if churn_rate <= 3.5:
+    if churn_rate <= risk_rules["healthy_churn_rate"]:
         score += 10
-    elif churn_rate >= 5:
+    elif churn_rate >= risk_rules["high_churn_rate"]:
         score -= 12
 
-    if activation_rate >= 50:
+    if activation_rate >= risk_rules["healthy_activation_rate"]:
         score += 10
-    elif activation_rate < 40:
+    elif activation_rate < risk_rules["very_low_activation_rate"]:
         score -= 8
 
-    if cac_delta_pct <= -5:
+    if cac_delta_pct <= risk_rules["cac_improvement_pct"]:
         score += 8
-    elif cac_delta_pct > 5:
+    elif cac_delta_pct > risk_rules["cac_worse_pct"]:
         score -= 8
 
-    if runway_months >= 12:
+    if runway_months >= risk_rules["healthy_runway_months"]:
         score += 8
-    elif runway_months < 9:
+    elif runway_months < risk_rules["low_runway_months"]:
         score -= 12
 
-    if pipeline_to_mrr >= 3:
+    if pipeline_to_mrr >= risk_rules["healthy_pipeline_to_mrr"]:
         score += 8
-    elif pipeline_to_mrr < 2:
+    elif pipeline_to_mrr < risk_rules["low_pipeline_to_mrr"]:
         score -= 8
 
     if burn_multiple is not None:
-        if burn_multiple <= 6:
+        if burn_multiple <= risk_rules["healthy_burn_multiple"]:
             score += 8
-        elif burn_multiple > 10:
+        elif burn_multiple > risk_rules["high_burn_multiple"]:
             score -= 10
     return max(0, min(100, score))
 
@@ -179,38 +228,44 @@ def _build_highlights(snapshot: MetricSnapshot) -> list[str]:
     return highlights
 
 
-def _build_risks(snapshot: MetricSnapshot) -> list[str]:
+def _format_rule_value(value: float) -> str:
+    return f"{value:g}"
+
+
+def _build_risks(snapshot: MetricSnapshot, risk_rules: dict[str, float]) -> list[str]:
     latest = snapshot.latest
     risks: list[str] = []
-    if latest.runway_months < 9:
-        risks.append(f"Runway is below 9 months at {latest.runway_months:.1f} months, which compresses fundraising options.")
-    elif latest.runway_months < 12:
+    if latest.runway_months < risk_rules["low_runway_months"]:
+        threshold = _format_rule_value(risk_rules["low_runway_months"])
+        risks.append(f"Runway is below {threshold} months at {latest.runway_months:.1f} months, which compresses fundraising options.")
+    elif latest.runway_months < risk_rules["healthy_runway_months"]:
         risks.append(f"Runway is {latest.runway_months:.1f} months, so the company should manage burn before the next raise.")
-    if snapshot.burn_delta_pct > 5:
+    if snapshot.burn_delta_pct > risk_rules["burn_increase_pct"]:
         risks.append(f"Burn increased {pct(snapshot.burn_delta_pct)} month over month; growth quality needs to justify the spend.")
-    if latest.churn_rate > 4:
+    if latest.churn_rate > risk_rules["elevated_churn_rate"]:
         risks.append(f"Churn is still elevated at {pct(latest.churn_rate)}, especially if expansion is not offsetting it.")
-    if latest.activation_rate < 50:
-        risks.append(f"Activation is below 50 percent, which can leak revenue before customers reach value.")
-    if snapshot.pipeline_to_mrr < 2:
+    if latest.activation_rate < risk_rules["low_activation_rate"]:
+        threshold = _format_rule_value(risk_rules["low_activation_rate"])
+        risks.append(f"Activation is below {threshold} percent, which can leak revenue before customers reach value.")
+    if snapshot.pipeline_to_mrr < risk_rules["low_pipeline_to_mrr"]:
         risks.append(f"Pipeline is only {snapshot.pipeline_to_mrr:.1f}x current MRR, leaving limited room for target misses.")
     if not risks:
         risks.append("No single metric is flashing red, but burn discipline and activation quality should stay visible.")
     return risks
 
 
-def _build_decisions(snapshot: MetricSnapshot) -> list[str]:
+def _build_decisions(snapshot: MetricSnapshot, risk_rules: dict[str, float]) -> list[str]:
     latest = snapshot.latest
     decisions: list[str] = []
-    if latest.runway_months < 10:
+    if latest.runway_months < risk_rules["fundraising_runway_months"]:
         decisions.append("Decide whether to reduce discretionary burn or start fundraising prep earlier.")
-    if latest.churn_rate > 3.5:
+    if latest.churn_rate > risk_rules["healthy_churn_rate"]:
         decisions.append("Decide which customer segment or onboarding gap is driving churn and assign an owner.")
-    if latest.activation_rate < 55:
+    if latest.activation_rate < risk_rules["activation_decision_rate"]:
         decisions.append("Decide whether activation improvement is the top product/GTM priority for the next month.")
-    if snapshot.pipeline_to_mrr >= 3:
+    if snapshot.pipeline_to_mrr >= risk_rules["healthy_pipeline_to_mrr"]:
         decisions.append("Decide which pipeline segments deserve founder time before adding more top-of-funnel volume.")
-    if snapshot.cac_delta_pct < 0 and snapshot.mrr_growth_pct > 5:
+    if snapshot.cac_delta_pct < 0 and snapshot.mrr_growth_pct > risk_rules["moderate_mrr_growth_pct"]:
         decisions.append("Decide whether CAC improvement is strong enough to increase spend in the best-performing channel.")
     if not decisions:
         decisions.append("Decide the one operating constraint the next board cycle should optimize around.")
