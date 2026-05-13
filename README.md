@@ -4,6 +4,15 @@ Turn startup metrics into a board pack, investor update, risk list, decision lis
 
 <!-- FOUNDER_OS_STANDARD_README -->
 
+## Non-technical starting point
+
+If you are a founder and want the no-code version first, start with the matching kit in:
+[Founder OS Adoption Kit](https://github.com/shubham1502-hue/founder-os-adoption-kit)
+
+This repo is the deeper module. The adoption kit gives you the simple template, sample input, founder prompt, and sample output.
+
+Start with the [Investor Update Kit](https://github.com/shubham1502-hue/founder-os-adoption-kit/tree/main/starter-kits/investor-update-kit).
+
 ## Output preview
 
 The included demo output shows:
