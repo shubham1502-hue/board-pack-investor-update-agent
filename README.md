@@ -4,6 +4,17 @@ Turn startup metrics into a board pack, investor update, risk list, decision lis
 
 <!-- FOUNDER_OS_STANDARD_README -->
 
+## Start here
+
+| Reader | Open first | Why | CTA |
+| --- | --- | --- | --- |
+| Founder | `docs/demo_output/board_pack.md` | See how sample metrics become risks, decisions, and board questions. | Use the structure for your next board or investor review. |
+| Non-technical operator | `docs/demo_output/investor_update.md` | Review the draft narrative without running code. | Copy the format into a private company update. |
+| Technical operator | `examples/startup_metrics.csv` | See the input shape before running the workflow. | Run `python -m board_pack_agent run --metrics examples/startup_metrics.csv --context examples/company_context.md --out docs/demo_output`. |
+| Hiring manager | `docs/demo_output/analysis.json` | Inspect the structured analysis behind the narrative. | Compare the JSON analysis with the board pack. |
+
+The committed demo uses fictional sample metrics. It shows the reporting workflow, not real company performance.
+
 ## Non-technical starting point
 
 If you are a founder and want the no-code version first, start with the matching kit in:
