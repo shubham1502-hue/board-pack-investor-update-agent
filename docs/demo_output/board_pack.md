@@ -1,11 +1,11 @@
 # Board Pack
 
-Latest month: 2026-06
+Latest month: 2026-04
 Health score: 81/100
 
 ## Executive Summary
 
-2026-06 was a stronger growth month, with MRR at $1.97M and month-over-month growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but runway is now 8.4 months, so the board discussion should stay focused on growth quality, burn discipline, and which pipeline segments deserve founder time.
+2026-04 was a stronger growth month, with MRR at $1.97M and month-over-month growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but runway is now 8.4 months, so the board discussion should stay focused on growth quality, burn discipline, and which pipeline segments deserve founder time.
 
 ## KPI Snapshot
 
@@ -50,9 +50,9 @@ Health score: 81/100
 
 | Month | MRR | Churn | CAC | Burn | Runway | Activation | Pipeline |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2026-01 | $1.20M | 4.8% | $18K | $900K | 12.5 | 38.0% | $3.20M |
-| 2026-02 | $1.32M | 4.4% | $18K | $940K | 11.8 | 41.0% | $3.60M |
-| 2026-03 | $1.49M | 3.9% | $17K | $990K | 10.9 | 45.0% | $4.10M |
-| 2026-04 | $1.61M | 4.2% | $17K | $1.06M | 9.8 | 47.0% | $4.70M |
-| 2026-05 | $1.78M | 3.6% | $16K | $1.08M | 9.1 | 51.0% | $5.30M |
-| 2026-06 | $1.97M | 3.2% | $16K | $1.12M | 8.4 | 54.0% | $6.10M |
+| 2025-11 | $1.20M | 4.8% | $18K | $900K | 12.5 | 38.0% | $3.20M |
+| 2025-12 | $1.32M | 4.4% | $18K | $940K | 11.8 | 41.0% | $3.60M |
+| 2026-01 | $1.49M | 3.9% | $17K | $990K | 10.9 | 45.0% | $4.10M |
+| 2026-02 | $1.61M | 4.2% | $17K | $1.06M | 9.8 | 47.0% | $4.70M |
+| 2026-03 | $1.78M | 3.6% | $16K | $1.08M | 9.1 | 51.0% | $5.30M |
+| 2026-04 | $1.97M | 3.2% | $16K | $1.12M | 8.4 | 54.0% | $6.10M |
