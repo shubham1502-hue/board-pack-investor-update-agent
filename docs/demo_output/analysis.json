@@ -2,7 +2,7 @@
   "company_context": "# Company Context\n\nThis is a fictional seed-stage AI SaaS company used for the demo.\n\nCompany:\nContextLayer AI\n\nWhat it sells:\nAn AI knowledge workflow for support and success teams.\n\nStage:\nSeed to Series A transition.\n\nCurrent operating question:\nCan the company keep growing MRR while improving activation and preserving enough runway to raise from a stronger position?\n\nAudience:\nFounders, board members, and current investors who need a concise monthly view of what changed, what is risky, and what decisions need to be made.\n\n",
   "metrics": [
     {
-      "month": "2026-01",
+      "month": "2025-11",
       "mrr": 1200000.0,
       "churn_rate": 4.8,
       "cac": 18000.0,
@@ -13,7 +13,7 @@
       "notes": "Founder-led sales, two enterprise pilots, activation still uneven."
     },
     {
-      "month": "2026-02",
+      "month": "2025-12",
       "mrr": 1320000.0,
       "churn_rate": 4.4,
       "cac": 17600.0,
@@ -24,7 +24,7 @@
       "notes": "Better onboarding from new success playbook. Pipeline improving."
     },
     {
-      "month": "2026-03",
+      "month": "2026-01",
       "mrr": 1485000.0,
       "churn_rate": 3.9,
       "cac": 16800.0,
@@ -35,7 +35,7 @@
       "notes": "New AI workflow positioning improved demo-to-trial quality."
     },
     {
-      "month": "2026-04",
+      "month": "2026-02",
       "mrr": 1610000.0,
       "churn_rate": 4.2,
       "cac": 17200.0,
@@ -46,7 +46,7 @@
       "notes": "Higher infra spend after usage growth. Churn ticked up in SMB segment."
     },
     {
-      "month": "2026-05",
+      "month": "2026-03",
       "mrr": 1780000.0,
       "churn_rate": 3.6,
       "cac": 16400.0,
@@ -57,7 +57,7 @@
       "notes": "Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
     },
     {
-      "month": "2026-06",
+      "month": "2026-04",
       "mrr": 1965000.0,
       "churn_rate": 3.2,
       "cac": 15800.0,
@@ -69,10 +69,10 @@
     }
   ],
   "analysis": {
-    "latest_month": "2026-06",
+    "latest_month": "2026-04",
     "health_score": 81,
     "latest_metrics": {
-      "month": "2026-06",
+      "month": "2026-04",
       "mrr": 1965000.0,
       "churn_rate": 3.2,
       "cac": 15800.0,
@@ -114,7 +114,7 @@
     ],
     "recent_rows": [
       {
-        "month": "2026-01",
+        "month": "2025-11",
         "mrr": 1200000.0,
         "churn_rate": 4.8,
         "cac": 18000.0,
@@ -125,7 +125,7 @@
         "notes": "Founder-led sales, two enterprise pilots, activation still uneven."
       },
       {
-        "month": "2026-02",
+        "month": "2025-12",
         "mrr": 1320000.0,
         "churn_rate": 4.4,
         "cac": 17600.0,
@@ -136,7 +136,7 @@
         "notes": "Better onboarding from new success playbook. Pipeline improving."
       },
       {
-        "month": "2026-03",
+        "month": "2026-01",
         "mrr": 1485000.0,
         "churn_rate": 3.9,
         "cac": 16800.0,
@@ -147,7 +147,7 @@
         "notes": "New AI workflow positioning improved demo-to-trial quality."
       },
       {
-        "month": "2026-04",
+        "month": "2026-02",
         "mrr": 1610000.0,
         "churn_rate": 4.2,
         "cac": 17200.0,
@@ -158,7 +158,7 @@
         "notes": "Higher infra spend after usage growth. Churn ticked up in SMB segment."
       },
       {
-        "month": "2026-05",
+        "month": "2026-03",
         "mrr": 1780000.0,
         "churn_rate": 3.6,
         "cac": 16400.0,
@@ -169,7 +169,7 @@
         "notes": "Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
       },
       {
-        "month": "2026-06",
+        "month": "2026-04",
         "mrr": 1965000.0,
         "churn_rate": 3.2,
         "cac": 15800.0,
@@ -182,7 +182,7 @@
     ]
   },
   "narrative": {
-    "executive_summary": "2026-06 was a stronger growth month, with MRR at $1.97M and month-over-month growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but runway is now 8.4 months, so the board discussion should stay focused on growth quality, burn discipline, and which pipeline segments deserve founder time.",
+    "executive_summary": "2026-04 was a stronger growth month, with MRR at $1.97M and month-over-month growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but runway is now 8.4 months, so the board discussion should stay focused on growth quality, burn discipline, and which pipeline segments deserve founder time.",
     "what_changed": [
       "MRR reached $1.97M, up 10.4% month over month.",
       "Pipeline reached $6.10M, up 15.1% month over month.",
@@ -206,6 +206,6 @@
       "What burn level gives us the best fundraising position three months from now?",
       "Which pipeline deals need founder involvement this month?"
     ],
-    "investor_update": "Hi everyone,\n\nQuick monthly update for 2026-06. MRR reached $1.97M, up 10.4% month over month. Activation improved to 54.0%, pipeline reached $6.10M, and CAC moved -3.7% versus last month.\n\nWhat improved:\n- MRR reached $1.97M, up 10.4% month over month.\n- Pipeline reached $6.10M, up 15.1% month over month.\n- Activation improved by 3.0 points to 54.0%.\n- Churn improved by 0.4 points to 3.2%.\n\nWhat we are watching:\n- Runway is below 9 months at 8.4 months, which compresses fundraising options.\n\nWhere help would be useful:\n- Warm intros to AI SaaS buyers who care about support, success, or internal knowledge workflows.\n- Feedback on whether we should prioritize enterprise expansion or faster mid-market acquisition this month.\n\nThanks,\n[Founder]"
+    "investor_update": "Hi everyone,\n\nQuick monthly update for 2026-04. MRR reached $1.97M, up 10.4% month over month. Activation improved to 54.0%, pipeline reached $6.10M, and CAC moved -3.7% versus last month.\n\nWhat improved:\n- MRR reached $1.97M, up 10.4% month over month.\n- Pipeline reached $6.10M, up 15.1% month over month.\n- Activation improved by 3.0 points to 54.0%.\n- Churn improved by 0.4 points to 3.2%.\n\nWhat we are watching:\n- Runway is below 9 months at 8.4 months, which compresses fundraising options.\n\nWhere help would be useful:\n- Warm intros to AI SaaS buyers who care about support, success, or internal knowledge workflows.\n- Feedback on whether we should prioritize enterprise expansion or faster mid-market acquisition this month.\n\nThanks,\n[Founder]"
   }
 }

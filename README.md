@@ -335,7 +335,7 @@ Demo files are committed in [docs/demo_output](docs/demo_output):
 ```text
 Executive Summary
 
-2026-06 was a stronger growth month, with MRR at $1.97M and month-over-month
+2026-04 was a stronger growth month, with MRR at $1.97M and month-over-month
 growth of 10.4%. Activation improved to 54.0% and churn moved to 3.2%, but
 runway is now 8.4 months, so the board discussion should stay focused on growth
 quality, burn discipline, and which pipeline segments deserve founder time.
@@ -449,14 +449,14 @@ Minimum CSV columns:
 
 ```csv
 month,mrr,churn_rate,cac,burn,runway_months,activation_rate,pipeline
-2026-06,1965000,3.2,15800,1120000,8.4,54,6100000
+2026-04,1965000,3.2,15800,1120000,8.4,54,6100000
 ```
 
 Recommended CSV:
 
 ```csv
 month,mrr,churn_rate,cac,burn,runway_months,activation_rate,pipeline,notes
-2026-06,1965000,3.2,15800,1120000,8.4,54,6100000,"Best month for expansion. Burn still rising but efficiency improved."
+2026-04,1965000,3.2,15800,1120000,8.4,54,6100000,"Best month for expansion. Burn still rising but efficiency improved."
 ```
 
 ## What Founders Can Fork This For

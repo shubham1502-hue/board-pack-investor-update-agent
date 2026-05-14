@@ -15,7 +15,7 @@ class MetricsTests(unittest.TestCase):
         snapshot = analyze_metrics(rows)
 
         self.assertEqual(len(rows), 6)
-        self.assertEqual(snapshot.latest.month, "2026-06")
+        self.assertEqual(snapshot.latest.month, "2026-04")
         self.assertGreater(snapshot.mrr_growth_pct, 10)
         self.assertLess(snapshot.latest.churn_rate, 3.5)
         self.assertTrue(snapshot.risks)
@@ -26,7 +26,7 @@ class MetricsTests(unittest.TestCase):
             path = Path(tmp) / "metrics.csv"
             path.write_text(
                 "month,mrr,churn_rate,cac,burn,runway_months,activation_rate,pipeline\n"
-                "2026-06,100,3,10,50,12,45,500\n",
+                "2026-04,100,3,10,50,12,45,500\n",
                 encoding="utf-8",
             )
 

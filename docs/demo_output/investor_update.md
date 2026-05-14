@@ -2,7 +2,7 @@
 
 Hi everyone,
 
-Quick monthly update for 2026-06. MRR reached $1.97M, up 10.4% month over month. Activation improved to 54.0%, pipeline reached $6.10M, and CAC moved -3.7% versus last month.
+Quick monthly update for 2026-04. MRR reached $1.97M, up 10.4% month over month. Activation improved to 54.0%, pipeline reached $6.10M, and CAC moved -3.7% versus last month.
 
 What improved:
 - MRR reached $1.97M, up 10.4% month over month.

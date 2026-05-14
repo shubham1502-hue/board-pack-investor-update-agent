@@ -1,8 +1,8 @@
 month,mrr,churn_rate,cac,burn,runway_months,activation_rate,pipeline,notes
-2026-01,1200000,4.8,18000,900000,12.5,38,3200000,"Founder-led sales, two enterprise pilots, activation still uneven."
-2026-02,1320000,4.4,17600,940000,11.8,41,3600000,"Better onboarding from new success playbook. Pipeline improving."
-2026-03,1485000,3.9,16800,990000,10.9,45,4100000,"New AI workflow positioning improved demo-to-trial quality."
-2026-04,1610000,4.2,17200,1060000,9.8,47,4700000,"Higher infra spend after usage growth. Churn ticked up in SMB segment."
-2026-05,1780000,3.6,16400,1080000,9.1,51,5300000,"Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
-2026-06,1965000,3.2,15800,1120000,8.4,54,6100000,"Best month for expansion. Burn still rising but efficiency improved."
+2025-11,1200000,4.8,18000,900000,12.5,38,3200000,"Founder-led sales, two enterprise pilots, activation still uneven."
+2025-12,1320000,4.4,17600,940000,11.8,41,3600000,"Better onboarding from new success playbook. Pipeline improving."
+2026-01,1485000,3.9,16800,990000,10.9,45,4100000,"New AI workflow positioning improved demo-to-trial quality."
+2026-02,1610000,4.2,17200,1060000,9.8,47,4700000,"Higher infra spend after usage growth. Churn ticked up in SMB segment."
+2026-03,1780000,3.6,16400,1080000,9.1,51,5300000,"Activation crossed 50 percent after onboarding changes. Enterprise pipeline expanding."
+2026-04,1965000,3.2,15800,1120000,8.4,54,6100000,"Best month for expansion. Burn still rising but efficiency improved."
 
