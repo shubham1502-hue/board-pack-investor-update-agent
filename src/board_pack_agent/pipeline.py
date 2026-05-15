@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from .llm import LLMProvider
-from .metrics import analyze_metrics, load_metrics
+from .metrics import analyze_metrics, load_metrics, load_risk_rules
 from .models import BoardNarrative, MetricRow, MetricSnapshot
 
 
@@ -20,9 +20,11 @@ def run_analysis(
     metrics_path: Path,
     context_path: Path | None,
     provider: LLMProvider,
+    risk_config_path: Path | None = None,
 ) -> tuple[list[MetricRow], MetricSnapshot, BoardNarrative, str]:
     rows = load_metrics(metrics_path)
-    snapshot = analyze_metrics(rows)
+    risk_rules = load_risk_rules(risk_config_path)
+    snapshot = analyze_metrics(rows, risk_rules)
     context = load_context(context_path)
     narrative = provider.synthesize(rows, snapshot, context)
     return rows, snapshot, narrative, context
