@@ -172,6 +172,12 @@ Use this repo with the Founder OS ecosystem if you want to connect it to adjacen
 - Pull hiring plan, leadership gap, offer risk, and team-capacity signal from [founder-hiring-talent-pipeline-os](https://github.com/shubham1502-hue/founder-hiring-talent-pipeline-os).
 - Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) when metric definitions need tightening.
 
+## Investor narrative to founder visibility
+
+Board Pack Investor Update Agent helps create investor-safe narrative. [Founder Visibility OS](https://github.com/shubham1502-hue/founder-visibility-os) can turn public-safe operating lessons, founder POVs, and proof-of-work into market-facing visibility and attribution.
+
+Keep private investor or company data out of public visibility workflows.
+
 ## Lifecycle handoff
 
 Before:
